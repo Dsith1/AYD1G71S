@@ -46,6 +46,12 @@ class ProductController{
     res.json({message:"El producto fue eliminado"});
 }
 
+  //reporte stock producto 
+  public async reporteStock (req:Request,res:Response){
+    const respuesta = await pool.query('select  nombre_prod, cantidad, precio_compra, precio_venta from producto');
+     res.json(respuesta);
+ }
+
 }
 
 export const productController = new ProductController();

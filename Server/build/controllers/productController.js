@@ -63,5 +63,12 @@ class ProductController {
             res.json({ message: "El producto fue eliminado" });
         });
     }
+    //reporte stock producto 
+    reporteStock(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const respuesta = yield database_1.default.query('select  nombre_prod, cantidad, precio_compra, precio_venta from producto');
+            res.json(respuesta);
+        });
+    }
 }
 exports.productController = new ProductController();

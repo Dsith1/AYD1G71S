@@ -1,0 +1,57 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
+    </mdb-navbar-brand>
+  
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" mdbWavesEffect [routerLink]="['/home']">Home</a>
+        </li>
+  
+        <div class="btn-group" mdbDropdown>
+            <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>{{Nombres}}</button>
+            <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+              mdbWavesEffect></button>
+            <div class="dropdown-menu">  
+              <a class="dropdown-item"  [routerLink]="['/principal']">Principal</a>
+             <div [innerHTML]="habilitacion"></div>
+              
+              <div class="dropdown-divider"></div>   
+              <a class="dropdown-item"   (click)="Logout()">Logout</a>
+            </div>
+          </div>
+      </ul>
+      <!-- Links -->
+  
+      
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+    <!--/.Navbar-->
+    <section class="text-center">
+      <h1 class="text-danger" style="font-size: 40px; font-weight:bold"> REPORTE STOCK PRODUCTOS  </h1>
+    <table mdbTable >
+        <thead class="black white-text">
+          <tr>
+            <th *ngFor="let head of headElements" scope="col-sm">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let vector of VectorProductos" class="grey black-text">
+            <td>{{vector.nombre_prod}}</td>
+            <td>{{vector.cantidad}}</td>
+            <td>{{vector.precio_venta}}</td>
+            <td>{{vector.precio_compra}}</td>
+           
+          </tr>
+        </tbody>
+      </table>
+    </section>

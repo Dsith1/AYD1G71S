@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://192.168.0.4:3000';
-//const baseUrl = 'http://localhost:3000';
+//const baseUrl = 'http://192.168.0.4:3000';
+const baseUrl = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
@@ -83,7 +83,7 @@ export class UsuarioService {
   }
 
     login(usuario){
-
+      console.log(usuario);
       const url= baseUrl+"/user/log";
       return this.http.post(
         url,

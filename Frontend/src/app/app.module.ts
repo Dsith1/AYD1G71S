@@ -29,6 +29,8 @@ import { ComprarComponent } from './components/comprar/comprar.component';
 import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
 import { ModificarPedidoComponent } from './components/modificar-pedido/modificar-pedido.component';
 import { MisPedidosComponent } from './components/mis-pedidos/mis-pedidos.component';
+import { ReporteStockComponent } from './components/reporte-stock/reporte-stock.component';
+import { ReporteMasVendidoComponent } from './components/reporte-mas-vendido/reporte-mas-vendido.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { MisPedidosComponent } from './components/mis-pedidos/mis-pedidos.compon
     ComprarComponent,
     AdminPedidosComponent,
     ModificarPedidoComponent,
-    MisPedidosComponent
+    MisPedidosComponent,
+    ReporteStockComponent,
+    ReporteMasVendidoComponent
   ],
   imports: [
     BrowserModule,

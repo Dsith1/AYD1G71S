@@ -1,0 +1,104 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg #80cbc4 teal lighten-3">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand " style="font-size:30px ; color:darkslateblue " href="#"> Farma Seven</a>
+    </mdb-navbar-brand>
+  
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" mdbWavesEffect [routerLink]="['/home']">Home</a>
+        </li>
+  
+        <div class="btn-group" mdbDropdown>
+            <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect>{{Nombres}}</button>
+            <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+              mdbWavesEffect></button>
+            <div class="dropdown-menu">  
+              <a class="dropdown-item"  [routerLink]="['/principal']">Principal</a>
+             <div [innerHTML]="habilitacion"></div>
+              
+              <div class="dropdown-divider"></div>   
+              <a class="dropdown-item"   (click)="Logout()">Logout</a>
+            </div>
+          </div>
+      </ul>
+      <!-- Links -->
+  
+      
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  
+  <div class="row ">
+    <div class="col-12">
+      <h3 align=center class="p-3 text "  style="font-size: 30px; font-weight:bold; color:darkslateblue "> Producto Más Vendido </h3>
+    </div>
+  </div>
+  
+  <!-- Extended material form grid -->
+  
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-3 col-1">
+  
+      </div>
+      <div class="col-md-6 col-10">
+        <form>
+          <!-- Grid row -->
+          <div class="form-row">
+            <!-- Grid column -->
+            <div class="col-md-4 col-12">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input  mdbInput  name="txtname" [(ngModel)]="mes" type="text" class="form-control" id="inputname" placeholder="">
+                <label for="inputEmail4MD">Ingrese el número de mes</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-12">
+              <div class="md-form form-group">
+                <input mdbInput name="txtapellidos" [(ngModel)]="numeroanio" type="text" class="form-control" id="inputApellidos" placeholder="">
+                <label for="inputAddressMD">Ingrese el año</label>
+              </div>
+            
+            </div>
+            <div class="col-md-4  col-12">
+                <button (click)="Buscar()" type="submit" mdbBtn color="secondary">Buscar</button>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+
+
+        </form>
+      </div>
+
+    </div>
+
+    <table mdbTable >
+        <thead class="black white-text">
+          <tr>
+            <th *ngFor="let head of headElements" scope="col-sm">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let vector of VectorProductos" class="grey black-text">
+            <td>{{vector.Nombre_Producto}}</td>
+            <td>{{vector.Cantidad_Vendida}}</td>
+            <td>{{vector.Total_Percibido}}</td>
+           
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  
+  <!-- Extended material form grid -->

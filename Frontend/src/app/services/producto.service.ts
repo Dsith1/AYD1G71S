@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://192.168.0.4:3000';
-//const baseUrl = 'http://localhost:3000';
+//const baseUrl = 'http://192.168.0.4:3000';
+const baseUrl = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
@@ -60,6 +60,7 @@ export class ProductoService {
     return this.http.get(url);
   }
 
+ 
   //***************************** VENTAS *********************************************** */
 
   CrearVenta(idU: number, direccion:string) { 
@@ -117,6 +118,7 @@ export class ProductoService {
     return this.http.get(url);
   }
 
+  
   obtenerPedidoCliente(id:number){
     const url= baseUrl+"/venta/misPedidos";
     return this.http.post(
@@ -150,6 +152,25 @@ export class ProductoService {
     ).pipe(map(data => data));
   }
 
+  /*********************  REPORTES ******************** */
+  StockProductos(){
+    const url= baseUrl+"/products/stock";
+    return this.http.get(url);
+  }
+  //  producto mas vendido por mes
+  ProductoMasVendidoMes(mes: number, anio:number){
+    const url= baseUrl+"/reporte/ventasmes";
+    return this.http.post(
+      url,
+      {
+        "mes":mes,
+        "anio":anio  
+      },
+      {
+        headers: this.headers
+      }
+    ).pipe(map(data => data));
+  }
   /************************ DIRECCIONES *************************** */
   CrearDireccion(idU:number, direccion:string){
     const url = baseUrl + "/direccion/createDir";
@@ -168,4 +189,6 @@ export class ProductoService {
   getDirecciones(id:string){
     return this.http.get(`${baseUrl}/direccion/?id=${id}`);
   }
+
+  //************************************************************* */
 }

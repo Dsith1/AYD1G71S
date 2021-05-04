@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { MisPedidosComponent } from './mis-pedidos.component';
+import { ReporteStockComponent } from './reporte-stock.component';
 
-describe('MisPedidosComponent', () => {
-  let component: MisPedidosComponent;
-  let fixture: ComponentFixture<MisPedidosComponent>;
+describe('ReporteStockComponent', () => {
+  let component: ReporteStockComponent;
+  let fixture: ComponentFixture<ReporteStockComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MisPedidosComponent ],
+      declarations: [ ReporteStockComponent ],
       imports: [
         HttpClientTestingModule, RouterTestingModule.withRoutes([]),
         ReactiveFormsModule, FormsModule
@@ -20,7 +20,7 @@ describe('MisPedidosComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MisPedidosComponent);
+    fixture = TestBed.createComponent(ReporteStockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

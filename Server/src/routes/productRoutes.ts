@@ -15,6 +15,7 @@ class ProductRoutes{
        this.router.post('/getProduct',productController.obtenerProd);
        this.router.put('/updateProd',productController.actualizarProd);
        this.router.delete('/deleteProd/:id',productController.eliminarProd);
+       this.router.get('/stock',productController.reporteStock);
    }
 }
 

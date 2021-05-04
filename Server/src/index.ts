@@ -8,6 +8,8 @@ import provRoutes from './routes/provRoutes';
 import categoriaRoutes from './routes/categoriaRoutes';
 import direccionRoutes from './routes/direccionRoutes';
 import ventaRoutes from './routes/ventaRoutes';
+import reportesRoutes from './routes/reportesRoutes';
+import { reporteController } from './controllers/reportesController';
 
 class Server{
     //creando la aplicacion
@@ -48,6 +50,7 @@ class Server{
         this.app.use('/categoria',categoriaRoutes)
         this.app.use('/direccion',direccionRoutes)
         this.app.use('/venta',ventaRoutes)
+        this.app.use('/reporte',reportesRoutes)
     }
 
     //inicializar el server

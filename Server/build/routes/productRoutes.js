@@ -13,6 +13,7 @@ class ProductRoutes {
         this.router.post('/getProduct', productController_1.productController.obtenerProd);
         this.router.put('/updateProd', productController_1.productController.actualizarProd);
         this.router.delete('/deleteProd/:id', productController_1.productController.eliminarProd);
+        this.router.get('/stock', productController_1.productController.reporteStock);
     }
 }
 const productRoutes = new ProductRoutes();

@@ -37,10 +37,12 @@ export class LoginComponent implements OnInit {
     this.datos.Username = this.username;
     this.datos.Password = this.password;
     if(this.userNameCorrecto(this.username)=="Cumple con el rango"){
-    this.service.login(this.datos)
-    .subscribe(
-      res => {
+     
+      console.log(this.datos.Username);
+      console.log(this.datos.Password);
+      this.service.login(this.datos).subscribe(res => {
         this.respuesta = res; 
+        console.log(this.respuesta);
         if(this.respuesta.token != "")
         {
           this.error=false;       
